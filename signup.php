@@ -7,8 +7,7 @@
 	<!--/tags -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="keywords" content="Lively Chat Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+	<meta name="keywords" />
 	<script type="application/x-javascript">
 		addEventListener("load", function () {
 			setTimeout(hideURLbar, 0);
@@ -45,8 +44,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="header_right">
 				<ul class="forms_right">
 					
-					<li><a href="signin.html"> Sign In</a> </li>
-					<li><a href="signup.html" class="active">JOIN AS A DONOR</a> </li>
+					<li><a href="signin.php"> Sign In</a> </li>
+					
 				</ul>
 
 			</div>
@@ -63,7 +62,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-						<a class="navbar-brand" href="index.html">
+						<a class="navbar-brand" href="index.php">
 							<h1><span class="fa fa-comments-o" aria-hidden="true"></span></h1>
 						</a>
 					</div>
@@ -71,35 +70,36 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<nav>
 							<ul class="nav navbar-nav">
-								<li><a href="index.html" class="active">HOME</a></li>
+								<li><a href="index.php" class="active">HOME</a></li>
 								
-								<li><a href="all donor list.html">ALL DONOR LIST</a></li>
+								<li><a href="all donor list.php">ALL DONOR LIST</a></li>
 									
 								
 								<li class="dropdown">
 									<a href="services.html" class="dropdown-toggle" data-toggle="dropdown">DONORS BY GROUP <b class="caret"></b></a>
 									<ul class="dropdown-menu">
-										<li><a href="A+.html">A+</a></li>
+										<li><a href="A+.php">A+</a></li>
 										<li class="divider"></li>
-										<li><a href="A-.html">A-</a></li>
+										<li><a href="A-.php">A-</a></li>
 										<li class="divider"></li>
-										<li><a href="B+.html">B+</a></li>
+										<li><a href="B+.php">B+</a></li>
 										<li class="divider"></li>
-										<li><a href="B-.html">B-</a></li>
+										<li><a href="B-.php">B-</a></li>
 										<li class="divider"></li>
-										<li><a href="AB+.html">AB+</a></li>
+										<li><a href="AB+.php">AB+</a></li>
 										<li class="divider"></li>
-										<li><a href="AB-.html">AB-</a></li>
+										<li><a href="AB-.php">AB-</a></li>
 										<li class="divider"></li>
-										<li><a href="O+.html">O+</a></li>
+										<li><a href="O+.php">O+</a></li>
 										<li class="divider"></li>
-										<li><a href="O-.html">O-</a></li>
+										<li><a href="O-.php">O-</a></li>
 										<li class="divider"></li>
 									</ul>
 								</li>
-								<li><a href="request for blood.html">REQUEST FOR BLOOD</a></li>
-								<li><a href="blood bank.html">BLOOD BANK</a></li>
-								<li><a href="mail.html">MAIL US</a></li>
+								<li><a href="request for blood.php">REQUEST FOR BLOOD</a></li>
+								<li><a href="blood bank.php">BLOOD BANK</a></li>
+								<li><a href="signup.php"> JOIN </a> </li>
+								<li><a href="all request list.php">ALL REQUEST</a></li>
 								
 							</ul>
 						</nav>
@@ -132,22 +132,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="inner_sec_info_agileits_w3">
 				<div class="signin-form">
 					<div class="login-form-rec">
-						<form action="#" method="post">
-							<input type="text" name="name" placeholder="Name" required="">
+						<form action="signup1.php" method="post">
+							<input type="text" id="name" name="name" placeholder="Name" required="">
+							<input type="text" id="user_Id " name="user_Id" placeholder="user_Id" required="">
+							<input type="email" id="email " name="email" placeholder="Email" required="">
+							<input type="text" id="blood_group" name="blood group" placeholder="Blood Group" required="">
 							
-							<input type="email" name="email" placeholder="Email" required="">
-							<input type="text" name="blood group" placeholder="Blood Group" required="">
-							<input type="text" name="location" placeholder="Location" required="">
-							<input type="text" name="contact" placeholder="Contact No." required="">
-							<input type="text" name="weight" placeholder="Weight" required="">
-							<input type="text" name="last date of donation" placeholder="Last Date Of Donation" required="">
-							<input type="text" name="gender" placeholder="Gender" required="">
-							<input type="password" name="password" id="password1" placeholder="Password" required="">
-							<input type="password" name="password" id="password2" placeholder="Confirm Password" required="">
+							<input type="text" id="location "name="location" placeholder="Location" required="">
+							<input type="text" id="contact "name="contact" placeholder="Contact No." required="">
+							<input type="text" id="weight"name="weight" placeholder="Weight" required="">
+							<input type="text" id="last_date_of_donation "name="last date of donation" placeholder="Last Date Of Donation: yy/d/m" >
+							<input type="text"id="gender" name="gender" placeholder="Gender" required="">
+							<input type="text" id="age "name="age" placeholder="Age" required="">
+							<input type="password" name="password" id="password" placeholder="Password" required="">
+							<!--<input type="password" name="password" id="password2" placeholder="Confirm Password" required="">-->
 							<input type="submit" value="Sign Up">
 						</form>
 					</div>
-					<p class="reg"><a href="#"> By clicking Signup, I agree to your terms</a></p>
+					<p class="reg"> By clicking Signup, I agree to your terms</a></p>
 
 				</div>
 			</div>
