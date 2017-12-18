@@ -71,7 +71,7 @@
 							<ul class="nav navbar-nav">
 								<li><a href="index.php" class="active">Home</a></li>
 								
-								<li><a href="services.html" class="active" >DONOR LIST</a></li>
+								<li><a href="all donor list.php" class="active" >DONOR LIST</a></li>
 									
 								
 								<li class="dropdown">
