@@ -7,7 +7,7 @@
 	<!--/tags -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="keywords"/>
+	<meta name="keywords"  />
 	<script type="application/x-javascript">
 		addEventListener("load", function () {
 			setTimeout(hideURLbar, 0);
@@ -44,8 +44,8 @@
 			<div class="header_right">
 				<ul class="forms_right">
 					
-					<li><a class="active" href="signin.html"> Sign In</a> </li>
-					<li><a href="signup.html"> JOIN AS A DONOR</a> </li>
+					<li><a class="active" href="signin.php"> Sign In</a> </li>
+					
 
 				</ul>
 
@@ -71,35 +71,36 @@
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<nav>
 							<ul class="nav navbar-nav">
-								<li><a href="index.html" class="active">HOME</a></li>
+								<li><a href="index.php" class="active">HOME</a></li>
 								
-								<li><a href="all donor list.html">ALL DONOR LIST</a></li>
+								<li><a href="all donor list.php">ALL DONOR LIST</a></li>
 									
 								
 								<li class="dropdown">
 									<a href="services.html" class="dropdown-toggle" data-toggle="dropdown">DONORS BY GROUP <b class="caret"></b></a>
 									<ul class="dropdown-menu">
-										<li><a href="A+.html">A+</a></li>
+										<li><a href="A+.php">A+</a></li>
 										<li class="divider"></li>
-										<li><a href="A-.html">A-</a></li>
+										<li><a href="A-.php">A-</a></li>
 										<li class="divider"></li>
-										<li><a href="B+.html">B+</a></li>
+										<li><a href="B+.php">B+</a></li>
 										<li class="divider"></li>
-										<li><a href="B-.html">B-</a></li>
+										<li><a href="B-.php">B-</a></li>
 										<li class="divider"></li>
-										<li><a href="AB+.html">AB+</a></li>
+										<li><a href="AB+.php">AB+</a></li>
 										<li class="divider"></li>
-										<li><a href="AB-.html">AB-</a></li>
+										<li><a href="AB-.php">AB-</a></li>
 										<li class="divider"></li>
-										<li><a href="O+.html">O+</a></li>
+										<li><a href="O+.php">O+</a></li>
 										<li class="divider"></li>
-										<li><a href="O-.html">O-</a></li>
+										<li><a href="O-.php">O-</a></li>
 										<li class="divider"></li>
 									</ul>
 								</li>
-								<li><a href="request for blood.html">REQUEST FOR BLOOD</a></li>
-								<li><a href="blood bank.html">BLOOD BANK</a></li>
-								<li><a href="mail.html">MAIL US</a></li>
+								<li><a href="request for blood.php">REQUEST FOR BLOOD</a></li>
+								<li><a href="blood bank.php">BLOOD BANK</a></li>
+								<li><a href="signup.php"> JOIN </a> </li>
+								<li><a href="all request list.php">ALL REQUEST</a></li>
 								
 							</ul>
 						</nav>
