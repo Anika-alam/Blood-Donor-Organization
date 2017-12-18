@@ -7,8 +7,7 @@
 	<!--/tags -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="keywords" content="Lively Chat Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+	<meta name="keywords" />
 	<script type="application/x-javascript">
 		addEventListener("load", function () {
 			setTimeout(hideURLbar, 0);
@@ -44,8 +43,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 			<div class="header_right">
 				<ul class="forms_right">
-					<li><a class="active" href="signin.html"> Sign In</a> </li>
-					<li><a href="signup.html"> JOIN AS A DONOR</a> </li>
+					<li><a class="active" href="signin.php"> Sign In</a> </li>
+					
 				</ul>
 
 			</div>
@@ -62,7 +61,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-						<a class="navbar-brand" href="index.html">
+						<a class="navbar-brand" href="index.php">
 							<h1><span class="fa fa-comments-o" aria-hidden="true"></span></h1>
 						</a>
 					</div>
@@ -70,35 +69,36 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<nav>
 							<ul class="nav navbar-nav">
-								<li><a href="index.html" class="active">Home</a></li>
+								<li><a href="index.php" class="active">Home</a></li>
 								
-								<li><a href="services.html" class="active" >DONOR LIST</a></li>
+								<li><a href="all donor list.php">ALL DONOR LIST</a></li>
 									
 								
 								<li class="dropdown">
 									<a href="services.html" class="dropdown-toggle" data-toggle="dropdown">DONORS BY GROUP <b class="caret"></b></a>
 									<ul class="dropdown-menu">
-										<li><a href="A+.html">A+</a></li>
+										<li><a href="A+.php">A+</a></li>
 										<li class="divider"></li>
-										<li><a href="A-.html">A-</a></li>
+										<li><a href="A-.php">A-</a></li>
 										<li class="divider"></li>
-										<li><a href="B+.html">B+</a></li>
+										<li><a href="B+.php">B+</a></li>
 										<li class="divider"></li>
-										<li><a href="B-.html">B-</a></li>
+										<li><a href="B-.php">B-</a></li>
 										<li class="divider"></li>
-										<li><a href="AB+.html">AB+</a></li>
+										<li><a href="AB+.php">AB+</a></li>
 										<li class="divider"></li>
-										<li><a href="AB-.html">AB-</a></li>
+										<li><a href="AB-.php">AB-</a></li>
 										<li class="divider"></li>
-										<li><a href="O+.html">O+</a></li>
+										<li><a href="O+.php">O+</a></li>
 										<li class="divider"></li>
-										<li><a href="O-.html">O-</a></li>
+										<li><a href="O-.php">O-</a></li>
 										<li class="divider"></li>
 									</ul>
 								</li>
-								<li><a href="request for blood.html">REQUEST FOR BLOOD</a></li>
-								<li><a href="blood bank.html">BLOOD BANK</a></li>
-								<li><a href="mail.html">Mail Us</a></li>
+								<li><a href="request for blood.php">REQUEST FOR BLOOD</a></li>
+								<li><a href="blood bank.php">BLOOD BANK</a></li>
+								<li><a href="signup.php"> JOIN </a> </li>
+								<li><a href="all request list.php">ALL REQUEST</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -108,6 +108,76 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</nav>
 		</div>
 	</div>
+
+	<div class="services-breadcrumb_w3ls">
+		<div class="inner_breadcrumb">
+
+			
+		</div>
+	</div>
+
+	<div class="banner-bottom">
+		<div class="container">
+				<div class="tittle_head_w3layouts">
+				<h3 class="tittle three">AB+ DONOR LIST </h3>
+				
+				<?php
+echo "<table style='border: solid 5px black;'>";
+echo "<tr><th>Name</th><th>Location</th><th>Contact</th><th>Blood_group</th></tr>";
+
+class TableRows extends RecursiveIteratorIterator { 
+    function __construct($it) { 
+        parent::__construct($it, self::LEAVES_ONLY); 
+    }
+
+    function current() {
+        return "<td style='width:150px;border:1px solid black;'>" . parent::current(). "</td>";
+    }
+
+    function beginChildren() { 
+        echo "<tr>"; 
+    } 
+
+    function endChildren() { 
+        echo "</tr>" . "\n";
+    } 
+} 
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "blood_donor_organization";
+
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	//$blood_group = $_POST['blood_group'];
+    $stmt = $conn->prepare("SELECT name,location,contact,blood_group FROM user WHERE blood_group ='AB+'"); 
+    $stmt->execute();
+
+    // set the resulting array to associative
+    $result = $stmt->setFetchMode(PDO::FETCH_ASSOC); 
+    foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) { 
+        echo $v;
+    }
+}
+catch(PDOException $e) {
+    echo "Error: " . $e->getMessage();
+}
+$conn = null;
+echo "</table>";
+?>
+			</div>
+			<div class="inner_sec_info_agileits_w3">
+			
+			</div>
+		</div>
+	</div>
+
+
+
+
+
 	<!-- footer -->
 	<div class="footer_top_agile_w3ls">
 		<div class="container">
