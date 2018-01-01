@@ -43,7 +43,7 @@
 			</div>
 			<div class="header_right">
 				<ul class="forms_right">
-					
+					<li><a class="active" href="signin requester.php"> Sign In Requester</a> </li>
 					<li><a class="active" href="signin.php"> Sign In</a> </li>
 					
 				</ul>
@@ -78,22 +78,45 @@
 								<li class="dropdown">
 									<a href="services.html" class="dropdown-toggle" data-toggle="dropdown">DONORS BY GROUP <b class="caret"></b></a>
 									<ul class="dropdown-menu">
-										<li><a href="A+.php">A+</a></li>
-										<li class="divider"></li>
-										<li><a href="A-.php">A-</a></li>
-										<li class="divider"></li>
-										<li><a href="B+.php">B+</a></li>
-										<li class="divider"></li>
-										<li><a href="B-.php">B-</a></li>
-										<li class="divider"></li>
-										<li><a href="AB+.php">AB+</a></li>
-										<li class="divider"></li>
-										<li><a href="AB-.php">AB-</a></li>
-										<li class="divider"></li>
-										<li><a href="O+.php">O+</a></li>
-										<li class="divider"></li>
-										<li><a href="O-.php">O-</a></li>
-										<li class="divider"></li>
+										<form action= "http://localhost/Blood%20Donor%20Organization/A-.php" method = "get">
+										<input type="hidden" name="doner" value ="A-">
+										<input type ="submit" value="A-">
+										</form>
+										<br>
+										<form action= "http://localhost/Blood%20Donor%20Organization/A-.php" method = "get">
+										<input type="hidden" name="doner" value ="A+">
+										<input type ="submit" value="A+">
+										</form>
+										<br>
+										<form action= "http://localhost/Blood%20Donor%20Organization/A-.php" method = "get">
+										<input type="hidden" name="doner" value ="B-">
+										<input type ="submit" value="B-">
+										</form>
+										<br>
+										<form action= "http://localhost/Blood%20Donor%20Organization/A-.php" method = "get">
+										<input type="hidden" name="doner" value ="B+">
+										<input type ="submit" value="B+">
+										</form>
+									    <br>
+										<form action= "http://localhost/Blood%20Donor%20Organization/A-.php" method = "get">
+										<input type="hidden" name="doner" value ="O+">
+										<input type ="submit" value="O+">
+										</form>
+										<br>
+										<form action= "http://localhost/Blood%20Donor%20Organization/A-.php" method = "get">
+										<input type="hidden" name="doner" value ="O-">
+										<input type ="submit" value="O-">
+										</form>
+										 <br>
+										<form action= "http://localhost/Blood%20Donor%20Organization/A-.php" method = "get">
+										<input type="hidden" name="doner" value ="AB+">
+										<input type ="submit" value="AB+">
+										</form>
+										<br>
+										<form action= "http://localhost/Blood%20Donor%20Organization/A-.php" method = "get">
+										<input type="hidden" name="doner" value ="AB-">
+										<input type ="submit" value="AB-">
+										</form>	
 									</ul>
 								</li>
 								<li><a href="request for blood.php">REQUEST FOR BLOOD</a></li>
@@ -119,8 +142,12 @@
 
 	<div class="banner-bottom">
 		<div class="container">
+		<form action="all donor list search.php" method="POST">
+	   <input type="text" id="search" name="search" placeholder="search for donors"/>
+	   <input type="submit" value="serach"/>
+	</form>   
 				<div class="tittle_head_w3layouts">
-				<h3 class="tittle three">A- DONOR LIST </h3>
+				<h3 class="tittle three"> DONOR LIST </h3>
 				
 				<?php
 echo "<table style='border: solid 5px black;'>";
@@ -149,11 +176,14 @@ $username = "root";
 $password = "";
 $dbname = "blood_donor_organization";
 
+
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	//$blood_group = $_POST['blood_group'];
-    $stmt = $conn->prepare("SELECT name,location,contact,blood_group FROM user WHERE blood_group ='a-'"); 
+	
+    $din=$_GET["doner"];
+    $stmt = $conn->prepare("SELECT name,location,contact,blood_group FROM user WHERE blood_group = '$din'"); 
     $stmt->execute();
 
     // set the resulting array to associative
